@@ -1,0 +1,5 @@
+SELECT ODATE, SUM(AMT) AS Total_Amount
+     FROM ORDERS
+     GROUP BY ODATE
+     ORDER BY Total_Amount DESC
+     LIMIT 1;

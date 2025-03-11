@@ -1,0 +1,3 @@
+SELECT AVG(COMM) AS AvgCommission
+FROM SALESPEOPLE
+WHERE CITY = 'London';

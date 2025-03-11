@@ -1,0 +1,19 @@
+SELECT 
+    'For ' || 
+    CASE 
+        WHEN LENGTH(TO_CHAR(O.ODATE, 'DD')) = 1 THEN '0' || TO_CHAR(O.ODATE, 'DD') 
+        ELSE TO_CHAR(O.ODATE, 'DD') 
+    END || '/' ||
+    CASE 
+        WHEN LENGTH(TO_CHAR(O.ODATE, 'MM')) = 1 THEN '0' || TO_CHAR(O.ODATE, 'MM') 
+        ELSE TO_CHAR(O.ODATE, 'MM') 
+    END || '/' ||
+    SUBSTR(TO_CHAR(O.ODATE, 'YYYY'), 3, 2) || ' there are ' || COUNT(*) || ' orders' AS order_summary
+FROM 
+    ORDERS O
+GROUP BY 
+    TO_CHAR(O.ODATE, 'DD/MM/YY')
+ORDER BY 
+    O.ODATE;
+
+

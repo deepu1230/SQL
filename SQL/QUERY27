@@ -1,0 +1,2 @@
+SELECT ONUM, SNUM, AMT * 0.12 AS Commission
+FROM ORDERS;

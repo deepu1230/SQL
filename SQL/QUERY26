@@ -1,0 +1,8 @@
+SELECT 
+    'For ' || TO_CHAR(O.ODATE, 'DD/MM/YY') || ' there are ' || COUNT(*) || ' orders' AS order_summary
+FROM 
+    ORDERS O
+GROUP BY 
+    TO_CHAR(O.ODATE, 'DD/MM/YY')
+ORDER BY 
+    O.ODATE;
